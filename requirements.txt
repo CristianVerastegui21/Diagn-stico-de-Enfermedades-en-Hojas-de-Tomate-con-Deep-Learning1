@@ -1,9 +1,8 @@
-
+streamlit
+tensorflow==2.13.0
 opencv-python
 keras-tuner
 gdown
-streamlit
-tensorflow
 matplotlib
 numpy
 pandas
@@ -11,5 +10,4 @@ seaborn
 scikit-learn
 statsmodels
 reportlab
-gdown
 Pillow
