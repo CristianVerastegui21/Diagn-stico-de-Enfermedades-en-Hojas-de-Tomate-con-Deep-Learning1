@@ -22,8 +22,21 @@ y recomendar **tratamientos específicos**.
 
 # Cargar modelo
 @st.cache_resource
+
+import os
+import gdown
+
+MODEL_PATH = "models/mejor_modelo.h5"
+MODEL_URL = "https://drive.google.com/file/d/13iTTs-V1f9frwnPioTTi1k3dGOpkk4XG/view?usp=sharing"
+
+# Descargar el modelo solo si no existe localmente
+if not os.path.exists(MODEL_PATH):
+    os.makedirs("models", exist_ok=True)
+    with st.spinner("Descargando modelo desde Google Drive..."):
+        gdown.download(MODEL_URL, MODEL_PATH, quiet=False)
+
 def load_model():
-    return tf.keras.models.load_model('models/best_tomato_model.h5')
+    return tf.keras.models.load_model('mejor_modelo.h5')
 
 
 model = load_model()
