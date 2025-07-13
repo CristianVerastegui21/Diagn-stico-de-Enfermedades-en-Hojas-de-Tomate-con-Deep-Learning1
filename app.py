@@ -22,8 +22,8 @@ Sistema de inteligencia artificial para identificar **9 enfermedades comunes** e
 y recomendar **tratamientos específicos**.
 """)
 
-MODEL_PATH = "models/mejor_modelo.h5"
-MODEL_URL = "https://drive.google.com/uc?id=13iTTs-V1f9frwnPioTTi1k3dGOpkk4XG"
+MODEL_PATH = "models/tomato_modelo.h5"
+MODEL_URL = "https://drive.google.com/file/d/1Iv6hYqGlHROsXWhRfpE58_sMPuX9UXeT"
 
 
 # Descargar el modelo solo si no existe localmente
