@@ -25,6 +25,7 @@ y recomendar **tratamientos específicos**.
 MODEL_PATH = "models/mejor_modelo.h5"
 MODEL_URL = "https://drive.google.com/uc?id=13iTTs-V1f9frwnPioTTi1k3dGOpkk4XG"
 
+
 # Descargar el modelo solo si no existe localmente
 if not os.path.exists(MODEL_PATH):
     os.makedirs("models", exist_ok=True)
