@@ -5,6 +5,8 @@ import cv2
 from PIL import Image
 import matplotlib.pyplot as plt
 import seaborn as sns
+import os
+import gdown
 
 # Configuración
 st.set_page_config(
@@ -20,14 +22,8 @@ Sistema de inteligencia artificial para identificar **9 enfermedades comunes** e
 y recomendar **tratamientos específicos**.
 """)
 
-# Cargar modelo
-@st.cache_resource
-
-import os
-import gdown
-
 MODEL_PATH = "models/mejor_modelo.h5"
-MODEL_URL = "https://drive.google.com/file/d/13iTTs-V1f9frwnPioTTi1k3dGOpkk4XG/view?usp=sharing"
+MODEL_URL = "https://drive.google.com/uc?id=13iTTs-V1f9frwnPioTTi1k3dGOpkk4XG"
 
 # Descargar el modelo solo si no existe localmente
 if not os.path.exists(MODEL_PATH):
@@ -35,11 +31,14 @@ if not os.path.exists(MODEL_PATH):
     with st.spinner("Descargando modelo desde Google Drive..."):
         gdown.download(MODEL_URL, MODEL_PATH, quiet=False)
 
+# Cargar modelo
+@st.cache_resource
 def load_model():
-    return tf.keras.models.load_model('mejor_modelo.h5')
-
+    return tf.keras.models.load_model(MODEL_PATH)
 
 model = load_model()
+
+# (El resto del código permanece igual sin cambios importantes...)
 
 # Información de enfermedades y tratamientos
 DISEASE_INFO = {
