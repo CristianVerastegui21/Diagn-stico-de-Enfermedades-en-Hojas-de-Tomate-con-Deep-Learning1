@@ -23,8 +23,7 @@ y recomendar **tratamientos específicos**.
 """)
 
 MODEL_PATH = "models/tomato_modelo.h5"
-MODEL_URL = "https://drive.google.com/file/d/1Iv6hYqGlHROsXWhRfpE58_sMPuX9UXeT"
-
+MODEL_URL = "https://drive.google.com/uc?id=1bErnPWGc0JfGgHy3oAcdqIgbUJBYySmf"
 
 # Descargar el modelo solo si no existe localmente
 if not os.path.exists(MODEL_PATH):
@@ -38,6 +37,8 @@ def load_model():
     return tf.keras.models.load_model(MODEL_PATH)
 
 model = load_model()
+
+# El resto del código permanece igual...
 
 # (El resto del código permanece igual sin cambios importantes...)
 
