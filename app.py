@@ -10,7 +10,7 @@ import gdown
 
 # Configuración
 st.set_page_config(
-    page_title="Diagnóstico de Enfermedades en Tomate v3",
+    page_title="Diagnóstico de Enfermedades en Tomate",
     layout="wide",
     initial_sidebar_state="expanded"
 )
